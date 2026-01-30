@@ -48,6 +48,19 @@ header {
     padding: 1rem 2rem;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 .logo h1 {
     font-size: 1.5rem;
     color: var(--primary-color);
@@ -102,6 +115,15 @@ header {
 
 .hero-content {
     max-width: 800px;
+}
+
+.hero-logo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-lg);
 }
 
 .hero h2 {
@@ -490,6 +512,11 @@ footer {
         display: flex;
     }
 
+    .hero-logo {
+        width: 140px;
+        height: 140px;
+    }
+
     .hero h2 {
         font-size: 2rem;
     }
@@ -515,6 +542,11 @@ footer {
 @media (max-width: 480px) {
     .navbar {
         padding: 1rem;
+    }
+
+    .logo-img {
+        height: 50px;
+        width: 50px;
     }
 
     .logo h1 {
