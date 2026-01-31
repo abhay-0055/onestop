@@ -80,19 +80,34 @@ contactForm.addEventListener('submit', function(e) {
         return;
     }
 
-    // Simulate form submission
+    // Submit to Formspree
     const submitBtn = contactForm.querySelector('.submit-btn');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
 
-    // Simulate API call
-    setTimeout(() => {
-        showNotification('Thank you for your message! We will get back to you soon.', 'success');
-        contactForm.reset();
+    fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            showNotification('Thank you for your message! We will get back to you soon.', 'success');
+            contactForm.reset();
+        } else {
+            showNotification('Oops! There was a problem sending your message. Please try again.', 'error');
+        }
+    })
+    .catch(() => {
+        showNotification('Oops! There was a problem sending your message. Please try again.', 'error');
+    })
+    .finally(() => {
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
-    }, 1500);
+    });
 });
 
 // Notification function
