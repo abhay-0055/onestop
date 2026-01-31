@@ -57,8 +57,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form submission handling - TEMPORARILY DISABLED FOR TESTING
-/*
+// Form submission handling (FormSubmit.co)
 const contactForm = document.getElementById('contactForm');
 
 contactForm.addEventListener('submit', function(e) {
@@ -81,7 +80,7 @@ contactForm.addEventListener('submit', function(e) {
         return;
     }
 
-    // Submit to Formspree
+    // Submit to FormSubmit
     const submitBtn = contactForm.querySelector('.submit-btn');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Sending...';
@@ -110,7 +109,6 @@ contactForm.addEventListener('submit', function(e) {
         submitBtn.disabled = false;
     });
 });
-*/
 
 // Notification function
 function showNotification(message, type) {
