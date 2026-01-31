@@ -57,7 +57,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form submission handling
+// Form submission handling - TEMPORARILY DISABLED FOR TESTING
+/*
 const contactForm = document.getElementById('contactForm');
 
 contactForm.addEventListener('submit', function(e) {
@@ -109,6 +110,7 @@ contactForm.addEventListener('submit', function(e) {
         submitBtn.disabled = false;
     });
 });
+*/
 
 // Notification function
 function showNotification(message, type) {
